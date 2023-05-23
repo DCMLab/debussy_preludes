@@ -12,10 +12,9 @@ and serves as welcome page for both
 
 # Claude Debussy – Préludes
 
-This dataset has been released together with the publication
+This dataset is part of the [The Claude Debussy Solo Piano Corpus](https://github.com/DCMLab/debussy_piano) which has been released together with the publication
 
 > Laneve, S., Schaerf, L., Cecchetti, G., Hentschel, J., & Rohrmeier, M. (in press). The diachronic development of Debussy’s musical style: A corpus study with Discrete Fourier Transform. Humanities and Social Sciences Communications.
-
 
 ## License
 
