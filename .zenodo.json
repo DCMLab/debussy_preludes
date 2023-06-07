@@ -4,17 +4,25 @@
     "title": "Claude Debussy – Préludes",
     "keywords": [
         "music research",
+        "music theory",
+        "music history",
+        "corpus studies",
         "corpora",
         "symbolic datasets",
         "scores",
-        "piano",
+        "piano music",
+        "claude debussy",
         "extended tonality",
         "modernism",
-        "impressionism"
+        "impressionism",
+        "discrete fourier transform"
     ],
     "grants": [
         {
             "id": "10.13039/501100001711::105216_182811"
+        },
+        {
+            "id": "10.13039/501100000780::760081"
         }
     ],
     "upload_type": "dataset",
@@ -22,10 +30,27 @@
     "communities": [
         {
             "identifier": "dcml"
+        },
+        {
+            "identifier": "epfl"
         }
     ],
     "publication_date": "2023-05-23",
     "creators": [
+        {
+            "affiliation": "State Music Conservatory \"Giuseppe Verdi\", Turin",
+            "name": "Sabrina Laneve"
+        },
+        {
+            "orcid": "0000-0001-9460-702X",
+            "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+            "name": "Ludovica Schaerf"
+        },
+        {
+            "orcid": "0000-0002-1486-1886",
+            "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+            "name": "Gabriele Cecchetti"
+        },
         {
             "orcid": "0000-0002-1986-9545",
             "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
@@ -43,6 +68,12 @@
             "scheme": "url",
             "identifier": "https://github.com/DCMLab/debussy_preludes/tree/v0.9.1",
             "relation": "isSupplementTo"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.1057/s41599-023-01796-7",
+            "relation": "isPublishedIn",
+            "resource_type": "publication-article"
         }
     ]
 }
