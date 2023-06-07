@@ -11,6 +11,4 @@ display as a static homepage:
 
    notebooks/overview
    notebooks/notes_stats
-   notebooks/annotations
-   notebooks/cadences
 
