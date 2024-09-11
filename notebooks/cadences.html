@@ -377,9 +377,9 @@ CORPUS_PATH: &#39;/home/runner/work/workflow_deployment/debussy_preludes&#39;
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data and software versions
 --------------------------
 
-Data repo &#39;debussy_preludes&#39; @ 391d3aa
+Data repo &#39;debussy_preludes&#39; @ 7210372
 dimcat version 0.3.0
-ms3 version 2.2.1
+ms3 version 2.5.2
 </pre></div>
 </div>
 </div>
@@ -394,31 +394,29 @@ ms3 version 2.2.1
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[<span class=" -Color -Color-Bold">annotated</span>|all|default]
-All corpora
------------
-View: This view is called &#39;annotated&#39;. It 
-	- excludes pieces that are not contained in the metadata,
-	- filters out file extensions requiring conversion (such as .xml),
-	- excludes review files and folders, and
-	- includes only facets containing &#39;expanded&#39;.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">DeprecationWarning</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">annotated_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get_view</span><span class="p">(</span><span class="s1">&#39;annotated&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">annotated_view</span><span class="o">.</span><span class="n">include</span><span class="p">(</span><span class="s1">&#39;facets&#39;</span><span class="p">,</span> <span class="s1">&#39;expanded&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">annotated_view</span><span class="o">.</span><span class="n">fnames_with_incomplete_facets</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">set_view</span><span class="p">(</span><span class="n">annotated_view</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">parse_tsv</span><span class="p">(</span><span class="n">choose</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
 
-                      has     active
-                 metadata       view
-corpus                              
-debussy_preludes      yes  annotated
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ms3/view.py:124,</span> in <span class="ni">View.fnames_with_incomplete_facets</span><span class="nt">(self, value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="nd">@fnames_with_incomplete_facets</span><span class="o">.</span><span class="n">setter</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="k">def</span> <span class="nf">fnames_with_incomplete_facets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">124</span>     <span class="k">raise</span> <span class="ne">DeprecationWarning</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="s2">&quot;&#39;fnames_with_incomplete_facets&#39; was renamed to  &#39;pieces_with_incomplete_facets&#39; in &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="s2">&quot;ms3 v2.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="p">)</span>
 
-11/12 facets are excluded from this view.
+<span class="ne">DeprecationWarning</span>: &#39;fnames_with_incomplete_facets&#39; was renamed to  &#39;pieces_with_incomplete_facets&#39; in ms3 v2.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N = 0 annotated pieces, 0 parsed dataframes.
-</pre></div>
-</div>
-</div>
 </div>
 <section id="metadata">
 <h2>Metadata<a class="headerlink" href="#metadata" title="Permalink to this heading">#</a></h2>
@@ -428,19 +426,6 @@ debussy_preludes      yes  annotated
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_metadata</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;No pieces selected for analysis.&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Concatenated &#39;metadata.tsv&#39; files cover </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_metadata</span><span class="p">)</span><span class="si">}</span><span class="s2"> of the </span><span class="si">{</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">count_pieces</span><span class="p">()</span><span class="si">}</span><span class="s2"> scores.&quot;</span><span class="p">)</span>
 <span class="n">all_metadata</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">20</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">all_metadata</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">metadata</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_metadata</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;No pieces selected for analysis.&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Concatenated &#39;metadata.tsv&#39; files cover </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_metadata</span><span class="p">)</span><span class="si">}</span><span class="s2"> of the </span><span class="si">{</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">count_pieces</span><span class="p">()</span><span class="si">}</span><span class="s2"> scores.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">all_metadata</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">20</span><span class="p">]</span>
-
-<span class="ne">AssertionError</span>: No pieces selected for analysis.
 </pre></div>
 </div>
 </div>
